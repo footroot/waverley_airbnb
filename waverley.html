@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Welcome to Your Stay</title>
+</head>
+<body>
+
+<div class="header">
+<h1>Welcome to Waverley Stay 🏡</h1>
+<p>We are thrilled to host you. Here is everything you need.</p>
+</div>
+
+<div class="container">
+
+<!-- CARD 1: ESSENTIAL INFO -->
+<div class="card">
+<h2>📍 Address</h2>
+<p class="address-text" id="address">19C Waverley Road, L17 8TZ Liverpool</p>
+<button class="btn" onclick="copyText('address', 'Address copied!')">Copy Address for Delivery/Taxi</button>
+</div>
+
+<!-- CARD 2: WI-FI BACKUP -->
+<div class="card">
+<h2>📶 Wi-Fi Details</h2>
+<p>If your auto-connect QR didn't work, use these details:</p>
+<div class="address-text">
+<strong>Network:</strong> Waverley_airBnB<br>
+<strong>Password:</strong> <span id="wifi-pass">#Waverley2026</span>
+</div>
+<button class="btn btn-secondary" onclick="copyText('wifi-pass', 'Password copied!')">Copy Wi-Fi Password</button>
+</div>
+
+<!-- CARD 3: HOUSE RULES & GUIDE -->
+<div class="card">
+<h2>🔑 Quick House Guide</h2>
+<ul>
+<li><strong>Check-out:</strong> 11:00 AM.</li>
+<li><strong>Quiet Hours:</strong> Please keep noise down between 10:00 PM and 8:00 AM.</li>
+<li><strong>Hot Water:</strong> The shower booster switch is located in the hallway cupboard if needed.</li>
+<li><strong>Trash:</strong> Bins are located at the side of the property. Recycling is the green bin.</li>
+</ul>
+</div>
+
+<!-- CARD 4: HOST CONTACT -->
+<div class="card">
+<h2>📞 Need Help?</h2>
+<div class="host-contact">
+<div class="host-avatar">MT</div>
+<div class="host-info">
+<strong>Your Host</strong><br>
+<a href="tel:+1234567890">Call / Text via Phone</a>
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
