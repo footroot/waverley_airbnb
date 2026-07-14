@@ -1,10 +1,10 @@
 function copyText(elementId, successMessage) {
-const text = document.getElementById(elementId).innerText;
-navigator.clipboard.writeText(text).then(() => {
-alert(successMessage);
-}).catch(err => {
-console.error('Failed to copy: ', err);
-});
+    const text = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        alert(successMessage);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
 }
 
 // Custom interactive visual select helper for egg styles
@@ -12,10 +12,10 @@ function selectEggStyle(element, value) {
     // Unselect all other egg cards
     const cards = document.querySelectorAll('.egg-card');
     cards.forEach(card => card.classList.remove('selected'));
-    
+
     // Mark chosen element
     element.classList.add('selected');
-    
+
     // Sync with invisible radio inputs
     const radio = element.querySelector('input[type="radio"]');
     if (radio) radio.checked = true;
@@ -31,7 +31,7 @@ function submitEggRequest(event) {
 
     // Constructing clean, readable message text
     const textMessage = `Hello Waverley Stay! 🍳\n\nI would love to have a fresh breakfast egg from your hens!\n\nStyle: *${chosenStyle}*\nRequested by: *${nameInput}*\n\nThank you!`;
-    
+
     // Encode message for Web URL compatibility
     const encodedText = encodeURIComponent(textMessage);
     const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedText}`;
@@ -53,7 +53,7 @@ function copyText(elementId, successMessage) {
     tempInput.value = textToCopy;
     document.body.appendChild(tempInput);
     tempInput.select();
-    
+
     try {
         const successful = document.execCommand('copy');
         if (successful) {
@@ -64,7 +64,7 @@ function copyText(elementId, successMessage) {
     } catch (err) {
         console.error('Failed to copy fallback context: ', err);
     }
-    
+
     document.body.removeChild(tempInput);
 }
 
@@ -73,7 +73,7 @@ let toastTimeout;
 function showToast(message) {
     const toast = document.getElementById('toast');
     const toastText = document.getElementById('toast-text');
-    
+
     if (!toast || !toastText) return;
 
     clearTimeout(toastTimeout);

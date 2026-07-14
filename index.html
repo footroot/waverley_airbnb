@@ -78,6 +78,55 @@
     </div>
 
 
+    <!-- CARD 5: FRESH HENS EGGS REQUEST (AFTER CARD 4) -->
+    <div class="card">
+        <h2><span class="material-icons">Would You like an egg</span></h2>
+        <p>
+            We have happy hens laying fresh organic eggs every day! We would be delighted to serve you a fresh egg for
+            breakfast. Please submit your preferences below:
+        </p>
+
+        <form id="eggForm" onsubmit="submitEggRequest(event)">
+
+
+            <!-- No need the form label because we only have one guest at a time -->
+            <!-- <div class="form-group">
+                <label class="form-label" for="guestName">Your Name & Room / Cabin</label>
+                <input type="text" id="guestName" class="form-input" placeholder="e.g. John Doe, Room 2" required>
+            </div> -->
+
+            <label class="form-label">How would you like your egg?</label>
+            <div class="egg-options">
+                <div class="egg-card selected" onclick="selectEggStyle(this, 'Boiled')">
+                    <input type="radio" name="eggStyle" value="Boiled" checked>
+                    <span class="egg-emoji">🥚</span>
+                    <span class="egg-label">Boiled</span>
+                </div>
+                <div class="egg-card" onclick="selectEggStyle(this, 'Fried')">
+                    <input type="radio" name="eggStyle" value="Fried">
+                    <span class="egg-emoji">🍳</span>
+                    <span class="egg-label">Fried</span>
+                </div>
+                <div class="egg-card" onclick="selectEggStyle(this, 'Scrambled')">
+                    <input type="radio" name="eggStyle" value="Scrambled">
+                    <span class="egg-emoji">🥣</span>
+                    <span class="egg-label">Scrambled</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-whatsapp">
+                <svg style="width:20px;height:20px;fill:currentColor;vertical-align:middle;margin-right:4px;"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm11.953-2.138c1.782.001 3.522-.479 5.03-1.388l.36-.214 3.737.98-.996-3.64.235-.374c1.002-1.597 1.531-3.454 1.529-5.37C22.001 6.305 17.912 2.21 12.01 2.21c-2.86.001-5.548 1.113-7.57 3.136C2.417 7.371 1.3 10.06 1.301 12.924c.002 4.903 4.093 9 10.002 9zM17.472 14.382c-.3-.149-1.778-.878-2.057-.978-.28-.101-.484-.149-.688.15-.203.3-.787.979-.966 1.179-.178.2-.357.225-.657.075-1.042-.518-1.728-.925-2.42-2.11-.184-.317.184-.294.524-.969.076-.15.038-.282-.019-.397-.057-.113-.484-1.166-.663-1.597-.174-.418-.365-.36-.484-.36h-.414c-.15 0-.393.056-.599.28-.206.224-.787.77-.787 1.879s.804 2.181.916 2.332c.112.15 1.583 2.417 3.834 3.39 2.251.972 2.251.648 2.657.61.405-.037 1.778-.727 2.028-1.43.25-.702.25-1.303.175-1.43-.075-.125-.275-.201-.575-.35z" />
+                </svg> Submit Fresh Egg Request
+            </button>
+        </form>
+    </div>
+
+    </div>
+
+
     <!-- STICKY FOOTER NAVIGATION -->
     <div class="footer-bar">
         <div class="footer-brand">
@@ -109,6 +158,8 @@
             </a>
         </div>
     </div>
+
+
 
 </body>
 <script src="js.js"></script>
