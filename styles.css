@@ -110,7 +110,7 @@ body {
 .map-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%;
+    /* padding-top: 56.25%; */
     /* 16:9 Aspect Ratio */
     border-radius: 12px;
     overflow: hidden;
@@ -203,29 +203,20 @@ li::before {
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 50%;
-    height: 50%;
+    width: auto;
+    height: auto;
 }
 
 .qrcode p {
     display: flex;
-    font-size: 13px;
+    font-size: auto;
     color: #717171;
     margin-top: 8px;
     text-align: center;
 }
 
-.qrcode img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background-color: white;
-    padding: 4px;
-}
-
 /* QR Codes Alignment */
-/* .qrcode-container {
+.qrcode-container {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -236,9 +227,9 @@ li::before {
     border: 1px solid #EAEAEA;
 }
 
-.qrcode-image {
-    width: 80px;
-    height: 80px;
+.qrcode img {
+    width: 50%;
+    height: auto;
     object-fit: contain;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -247,6 +238,7 @@ li::before {
     flex-shrink: 0;
 }
 
+/*
 .qrcode-desc {
     font-size: 13px;
     color: #717171;
@@ -387,6 +379,16 @@ li::before {
     background-color: white;
 }
 
+svg {
+
+
+width:20px;
+height:20px;
+fill:currentColor;
+vertical-align:middle;
+margin-right:4px;
+
+}
 /* Fixed Footer bar containing social platforms and direct action buttons */
 .footer-bar {
     position: fixed;
