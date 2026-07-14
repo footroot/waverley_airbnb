@@ -31,6 +31,9 @@ body {
 
 /* Header design */
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background-color: white;
     text-align: center;
     padding: 40px 20px;
@@ -202,6 +205,14 @@ li::before {
     flex-direction: row;
     width: 50%;
     height: 50%;
+}
+
+.qrcode p {
+    display: flex;
+    font-size: 13px;
+    color: #717171;
+    margin-top: 8px;
+    text-align: center;
 }
 
 .qrcode img {
