@@ -1,3 +1,24 @@
+// header to icon on scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("header");
+    const laptopQuery = window.matchMedia("(min-width: 1024px)");
+    
+    function checkScroll() {
+        //Only run the shrink Logic on Laptops screen and Larger
+        if (laptopQuery.matches && window.scrollY > 60) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    }
+
+    // Listen for scroll events
+    window.addEventListener("scroll", checkScroll);
+
+    // Listen for screen resizing (e.g., if user shrinks thei browser window)
+    laptopQuery.addEventListener("change", checkScroll);
+})
+
 // Store selected style (default to Boiled)
 let currentStyleSelection = 'Boiled';
 

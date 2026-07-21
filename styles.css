@@ -25,8 +25,11 @@ body {
 .header {
     background-color: white;
     text-align: center;
-    padding: 40px 20px;
-    border-bottom: 1px solid var(--border);
+    padding: 10px 20px ;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .header h1 {
@@ -48,7 +51,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 95%;
     margin: 0 auto;
     padding: 24px 16px;
 }
@@ -197,18 +200,18 @@ li::before {
 }
 
 .qrcode-image {
-    width: 80px;
-    height: 80px;
+    width: 40vw;
+    height: 40vh;
     object-fit: contain;
     border: 1px solid var(--border);
     border-radius: 8px;
     background: white;
-    padding: 4px;
-    flex-shrink: 0;
+    padding: 1px;
+    flex-shrink: 2;
 }
 
 .qrcode-desc {
-    font-size: 13px;
+    font-size: 23px;
     color: #717171;
     line-height: 1.4;
 }
@@ -414,4 +417,43 @@ li::before {
 .toast-container .material-icons {
     color: #00FF66;
     font-size: 20px;
+}
+
+/* Only apply the scroll-to-icon transformation on laptos and bigger screens */
+@media (min-width: 1024px) {
+    .header {
+        /* add a transition for smooth transformation */
+        transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* styles applied via Javascript when the user scrolls down */
+    .header.scrolled {
+        padding: 10px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+        /* Fixed position places it in the corner out of the content's way */
+        position: fixed;
+        top: 20px;
+        left: 20px;
+
+        /* Center the remaining icon perfectly */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border: 1px solid var(--border);
+    }
+
+    /* Hide the text and description on scroll */
+    .header.scrolled .header-text,
+    .header.scrolled p {
+        display: none;
+    }
+
+    /* enlarge the emoji slightly when it becomes the standalone icon */
+    .header.scrolled .header-icon {
+        font-size: 24px;
+    }
 }
