@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Guest information for Waverley Stay: directions, Wi-Fi, house rules, host contact and local property details.">
     <title>Welcome to Your Stay</title>
     <!-- Google Fonts & Material Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +21,29 @@
         <span id="toast-text">Success context</span>
     </div>
 
+    <!-- Cookie consent banner -->
+    <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-live="polite"
+        aria-label="Cookie consent banner">
+        <div class="cookie-banner__content">
+            <div class="cookie-banner__text">
+                <p><strong>We use cookies</strong> to keep this experience smooth and remember your preferences. Accept
+                    to allow non-essential cookies, or reject to keep only essential functionality.</p>
+            </div>
+            <div class="cookie-banner__actions">
+                <button type="button" class="btn btn-secondary" onclick="rejectCookies()">Reject</button>
+                <button type="button" class="btn" onclick="acceptCookies()">Accept</button>
+            </div>
+        </div>
+        <div id="cookie-details" class="cookie-banner__details hidden">
+            <p>Essential cookies are required for navigation and basic page functionality. Non-essential cookies help us
+                improve analytics and personalization.</p>
+            <button type="button" class="cookie-banner__link" onclick="hideCookieDetails()">Close</button>
+        </div>
+        <div class="cookie-banner__note">
+            <a href="#" onclick="showCookieDetails(event)">Cookie policy details</a>
+        </div>
+    </div>
+
     <!-- Header Block -->
     <div class="header" id="header">
         <h1>
@@ -28,21 +53,22 @@
         <p>We are thrilled to host you. Here is everything you need during your visit.</p>
     </div>
 
-    <div class="container">
+    <main class="container">
 
         <!-- CARD 1: ESSENTIAL ADDRESS INFO -->
         <div class="card">
-            <h2><span class="material-icons">place</span> Address</h2>
-            <p class="address-text" id="address">19C Waverley Road, L17 8TZ Liverpool</p>
+            <h2><span class="material-icons" aria-hidden="true">place</span> Address</h2>
+            <p class="address-text" id="address-liverpool">19C Waverley Road, L17 8TZ Liverpool</p>
 
             <div class="qrcode-container">
-                <img class="qrcode-image" src="img/qr_codes/address.png" alt="Address QR Code">
+                <img class="qrcode-image" src="img/qr_codes/address.png" alt="Liverpool address QR Code">
                 <p class="qrcode-desc">Scan this QR code using your mobile phone camera for direct map directions and
                     easy navigation.</p>
             </div>
 
-            <button class="btn" onclick="copyText('address', 'Waverley address copied to clipboard!')">
-                <span class="material-icons">content_copy</span> Copy Address for Taxi / Delivery
+            <button class="btn" type="button"
+                onclick="copyText('address-liverpool', 'Waverley address copied to clipboard!')">
+                <span class="material-icons" aria-hidden="true">content_copy</span> Copy Address for Taxi / Delivery
             </button>
 
             <div class="map-container">
@@ -106,27 +132,9 @@
                 Do you want a fresh organic egg from our happy hens? We have hens laying daily and would love to serve
                 you fresh breakfast eggs!
             </p>
-            <p style="font-size: 13px; color: #717171; font-weight: 500;">
-                Select how you'd like your egg cooked:
+            <p style="font-size: 13px; color: #717171; font-weight: 500; margin-bottom: 18px;">
+                Want fresh eggs for breakfast? Tap the button below and message us on WhatsApp.
             </p>
-
-            <div class="egg-options">
-                <div class="egg-card selected" onclick="selectEggStyle(this, 'Boiled')">
-                    <input type="radio" name="eggStyle" value="Boiled" checked>
-                    <span class="egg-emoji">🥚</span>
-                    <span class="egg-label">Boiled</span>
-                </div>
-                <div class="egg-card" onclick="selectEggStyle(this, 'Fried')">
-                    <input type="radio" name="eggStyle" value="Fried">
-                    <span class="egg-emoji">🍳</span>
-                    <span class="egg-label">Fried</span>
-                </div>
-                <div class="egg-card" onclick="selectEggStyle(this, 'Scrambled')">
-                    <input type="radio" name="eggStyle" value="Scrambled">
-                    <span class="egg-emoji">🥣</span>
-                    <span class="egg-label">Scrambled</span>
-                </div>
-            </div>
 
             <button type="button" class="btn btn-whatsapp" onclick="submitEggRequest()">
                 <svg style="width:20px;height:20px;fill:currentColor;vertical-align:middle;margin-right:4px;"
@@ -137,34 +145,32 @@
             </button>
         </div>
 
-
+        <!-- second map for Xativa, Spain, with address and QR code for navigation. -->
         <div class="card">
-        <h2><span class="material-icons">info</span> Castle View Xativa</h2>
-        <!-- <p style="font-size: 14px; color: #484848; line-height: 1.45;">
-            If you like to visit Xativa in Spain, we recommend exploring the historic center and trying the local
-            cuisine.
-            keep in contact to rent the rural house </p> -->
-            <div class="card">
-                <h2><span class="material-icons">place</span> Address</h2>
-                <p class="address-text" id="address">Cami Belen, 8B 46894 Xativa, Valencia, Spain</p>
-    
-                <div class="qrcode-container">
-                    <img class="qrcode-image" src="img/qr_codes/cami-belen.png" alt="Address QR Code">
-                    <p class="qrcode-desc">Scan this QR code using your mobile phone camera for direct map directions and
-                        easy navigation.</p>
-                </div>
-    
-                <button class="btn" onclick="copyText('address', 'Waverley address copied to clipboard!')">
-                    <span class="material-icons">content_copy</span> Copy Address for Taxi / Delivery
-                </button>
-    
-                <div class="map-container">
-                    <iframe class="address-map"
-                        src="https://maps.app.goo.gl/52PgMU8jCWAsoXUE8"></iframe>
-                </div>
+            <h2><span class="material-icons" aria-hidden="true">info</span> Castle View Xativa</h2>
+            <p class="card-subtitle">Scan the QR code or copy the address below for easy directions to Xativa, Valencia.
+            </p>
+
+            <p class="address-text" id="address-xativa">Cami Belen, 8B 46894 Xativa, Valencia, Spain</p>
+
+            <div class="qrcode-container">
+                <img class="qrcode-image" src="img/qr_codes/cami-belen.png" alt="Castle View Xativa address QR Code">
+                <p class="qrcode-desc">Scan this QR code using your mobile phone camera for direct map directions.</p>
+            </div>
+
+            <button class="btn" type="button"
+                onclick="copyText('address-xativa', 'Castle View address copied to clipboard!')">
+                <span class="material-icons" aria-hidden="true">content_copy</span> Copy Address for Taxi / Delivery
+            </button>
+
+            <div class="map-container">
+                <iframe class="address-map"
+                    src="https://www.google.com/maps?q=Cami+Belen+8B+46894+Xativa+Valencia+Spain&output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Map to Castle View Xativa"></iframe>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- STICKY FOOTER NAVIGATION -->
     <div class="footer-bar">
