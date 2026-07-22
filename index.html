@@ -132,30 +132,9 @@
                 Do you want a fresh organic egg from our happy hens? We have hens laying daily and would love to serve
                 you fresh breakfast eggs!
             </p>
-            <p style="font-size: 13px; color: #717171; font-weight: 500;">
-                Select how you'd like your egg cooked:
+            <p style="font-size: 13px; color: #717171; font-weight: 500; margin-bottom: 18px;">
+                Want fresh eggs for breakfast? Tap the button below and message us on WhatsApp.
             </p>
-
-            <div class="egg-options" role="radiogroup" aria-label="Choose egg style">
-                <div class="egg-card selected" role="radio" aria-checked="true" tabindex="0"
-                    onclick="selectEggStyle(this, 'Boiled')" onkeydown="handleEggKeydown(event, this, 'Boiled')">
-                    <input type="radio" name="eggStyle" value="Boiled" checked>
-                    <span class="egg-emoji">🥚</span>
-                    <span class="egg-label">Boiled</span>
-                </div>
-                <div class="egg-card" role="radio" aria-checked="false" tabindex="0"
-                    onclick="selectEggStyle(this, 'Fried')" onkeydown="handleEggKeydown(event, this, 'Fried')">
-                    <input type="radio" name="eggStyle" value="Fried">
-                    <span class="egg-emoji">🍳</span>
-                    <span class="egg-label">Fried</span>
-                </div>
-                <div class="egg-card" role="radio" aria-checked="false" tabindex="0"
-                    onclick="selectEggStyle(this, 'Scrambled')" onkeydown="handleEggKeydown(event, this, 'Scrambled')">
-                    <input type="radio" name="eggStyle" value="Scrambled">
-                    <span class="egg-emoji">🥣</span>
-                    <span class="egg-label">Scrambled</span>
-                </div>
-            </div>
 
             <button type="button" class="btn btn-whatsapp" onclick="submitEggRequest()">
                 <svg style="width:20px;height:20px;fill:currentColor;vertical-align:middle;margin-right:4px;"

@@ -21,30 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initCookieBanner();
 })
 
-// Store selected style (default to Boiled)
-let currentStyleSelection = 'Boiled';
-
-// Select helper for interactive cooking selection cards
-function selectEggStyle(element, value) {
-    // Unselect all other egg cards
-    const cards = document.querySelectorAll('.egg-card');
-    cards.forEach(card => card.classList.remove('selected'));
-
-    // Mark chosen element as selected
-    element.classList.add('selected');
-    currentStyleSelection = value;
-
-    // Sync with invisible radio inputs
-    const radio = element.querySelector('input[type="radio"]');
-    if (radio) radio.checked = true;
-}
-
 // Package preference message and trigger redirect to WhatsApp
 function submitEggRequest() {
     const targetPhone = "447506994559"; // Your WhatsApp Contact Phone
 
     // Crafting direct, clean message
-    const textMessage = `Hello Waverley Stay! 🍳\n\nI would love to have a fresh breakfast egg from your hens!\n\nStyle: *${currentStyleSelection}*\n\nThank you!`;
+    const textMessage = `Hello Waverley Stay! 🍳\n\nI would love to order a fresh breakfast egg from your hens.\n\nThank you!`;
 
     // Safe URL character encoding
     const encodedText = encodeURIComponent(textMessage);
@@ -93,14 +75,6 @@ async function copyText(elementId, successMessage) {
         console.error('Fallback clipboard processing failed: ', err);
     } finally {
         document.body.removeChild(tempInput);
-    }
-}
-
-// Keyboard support for egg style cards
-function handleEggKeydown(event, element, value) {
-    if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        selectEggStyle(element, value);
     }
 }
 
