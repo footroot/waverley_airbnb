@@ -27,7 +27,6 @@ body {
     padding-bottom: 100px;
     /* Space for the sticky social bar */
     line-height: 1.5;
-    image-rendering: lazy;
 }
 
 .header {
