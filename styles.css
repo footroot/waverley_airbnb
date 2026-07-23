@@ -527,3 +527,26 @@ li::before {
         font-size: 24px;
     }
 }
+
+/* Moved inline styles from index.html */
+.breakfast-desc {
+    font-size: 14px;
+    color: #484848;
+    line-height: 1.45;
+    margin-bottom: 12px;
+}
+
+.breakfast-note {
+    font-size: 13px;
+    color: #717171;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.icon-small {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    vertical-align: middle;
+    margin-right: 4px;
+}
